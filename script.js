@@ -62,11 +62,11 @@ function render() {
         }); 
         
         const btnTodoRemove = li.querySelector('.todo-remove');        
-        btnTodoRemove.addEventListener('click',  function(){
-            let listItem=this.parentNode;
-            let ul =listItem.parentNode;
-            ul.remove(listItem);
-            localStorage.setItem('newArr', JSON.stringify(todoData));
+        btnTodoRemove.addEventListener('click',  function(){             
+        todoData.splice(todoData.indexOf(item), 1); 
+        localStorage.setItem('newArr', JSON.stringify(todoData)); 
+        render();
+
         });
               
                 
