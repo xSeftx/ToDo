@@ -6,8 +6,8 @@ class Todo {
         this.input = document.querySelector(input);
         this.todoList = document.querySelector(todoList);
         this.todoCompleted = document.querySelector(todoCompleted);
-        this.todoData = new Map();
-        JSON.parse(localStorage.getItem('toDoList')) 
+        this.todoData = new Map(JSON.parse(localStorage.getItem('toDoList')) );
+        
     }
 
     addToStorage() {
