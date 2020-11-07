@@ -97,18 +97,34 @@ class Todo {
         span.focus();
     }
 
+    editItem(elem) {
+        const span = elem.querySelector(".text-todo");
+        span.setAttribute("contenteditable", true);
+        span.focus();
+    }
+
+    animate(elem) {
+        elem.style.animation = "scale-animation-delete 2s ease";
+    }
+
     handler(event) {       
         const target = event.target, 
             element = target.parentNode.parentNode; 
         
         if (target.matches(".todo-remove")) {
-            this.deleteItem(element);
-            
+            this.animate(element);
+            setTimeout(() => {
+                this.deleteItem(element);
+            }, 1000);
         } else if (target.matches(".todo-complete")) {
-            this.completedItem(element);
+            this.animate(element);
+            setTimeout(() => {
+                this.completedItem(element);
+            }, 1000);
         } else if (target.matches(".todo-edit")) {
             this.editItem(element);
         }
+        
     }   
 
 
