@@ -104,7 +104,7 @@ class Todo {
     }
 
     animate(elem) {
-        elem.style.animation = "scale-animation-delete 2s ease";
+        elem.style.backgroundColor = "red";
     }
 
     handler(event) {       
